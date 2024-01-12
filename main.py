@@ -9,7 +9,10 @@ CORS(app)
 
 @app.post("/tictactoe")
 def TTT():
-    return jsonify({"text":"yes"})
+    file = open("static/ttt.html")
+    content = '\n'.join(file.readlines())
+    file.close()
+    return jsonify({"text": content})
 
 
 if __name__ == "__main__":
